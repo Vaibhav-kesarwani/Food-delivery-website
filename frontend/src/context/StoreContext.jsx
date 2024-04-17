@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
+import PropTypes from "prop-types";
 import { food_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
@@ -44,6 +45,11 @@ const StoreContextProvider = (props) => {
       {props.children}
     </StoreContext.Provider>
   );
+};
+
+// Add prop types validation
+StoreContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default StoreContextProvider;
