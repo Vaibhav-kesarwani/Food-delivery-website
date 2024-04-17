@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"; 
 import { useContext} from "react";
 import "./FoodItem.css";
 import { assets } from "../../assets/assets";
@@ -40,6 +41,15 @@ const FoodItem = ({ id, name, price, description, image }) => {
       </div>
     </div>
   );
+};
+
+// Add prop types validation
+FoodItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default FoodItem;

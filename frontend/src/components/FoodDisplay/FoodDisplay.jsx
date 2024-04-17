@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useContext } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
@@ -27,6 +28,11 @@ const FoodDisplay = ({ category }) => {
       </div>
     </div>
   );
+};
+
+// Add prop types validation
+FoodDisplay.propTypes = {
+  category: PropTypes.string.isRequired,
 };
 
 export default FoodDisplay;

@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
@@ -30,16 +31,22 @@ const LoginPopup = ({ setShowLogin }) => {
         </div>
         {currentState === "Login" ? (
           <p>
-            Create a new account? <span onClick={() => setCurrentState("Sign Up")}>Click here</span>
+            Create a new account?{" "}
+            <span onClick={() => setCurrentState("Sign Up")}>Click here</span>
           </p>
         ) : (
           <p>
-            Already hav an account? <span onClick={() => setCurrentState("Login")}>Login here</span>
+            Already hav an account?{" "}
+            <span onClick={() => setCurrentState("Login")}>Login here</span>
           </p>
         )}
       </form>
     </div>
   );
+};
+
+LoginPopup.propTypes = {
+  setShowLogin: PropTypes.func.isRequired,
 };
 
 export default LoginPopup;

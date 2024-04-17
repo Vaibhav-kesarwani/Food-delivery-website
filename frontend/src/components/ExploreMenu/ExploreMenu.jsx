@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./ExploreMenu.css";
 import { menu_list } from "../../assets/assets";
 
@@ -25,6 +26,7 @@ const ExploreMenu = ({ category, setCategory }) => {
               <img
                 className={category === item.menu_name ? "active" : ""}
                 src={item.menu_image}
+                alt={item.menu_name}
               />
               <p>{item.menu_name}</p>
             </div>
@@ -34,6 +36,12 @@ const ExploreMenu = ({ category, setCategory }) => {
       <hr />
     </div>
   );
+};
+
+// Add prop types validation
+ExploreMenu.propTypes = {
+  category: PropTypes.string.isRequired,
+  setCategory: PropTypes.func.isRequired,
 };
 
 export default ExploreMenu;
